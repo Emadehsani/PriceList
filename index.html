@@ -69,6 +69,12 @@
   let allData = [];
   let activeFilters = { category: [], type: [], size: [], layer: [] };
 
+  // تابع فرمت کردن اعداد به سه رقم سه رقم
+  function formatNumber(num) {
+    if(!num) return "";
+    return Number(num).toLocaleString('fa-IR');
+  }
+
   fetch(sheetUrl)
     .then(res => res.text())
     .then(text => {
@@ -125,11 +131,11 @@
       let tr = document.createElement("tr");
       tr.innerHTML = `
         <td>${item.name || ""}</td>
-        <td>${item.price_omomi || ""}</td>
-        <td>${item.price_digital || ""}</td>
-        <td>${item.price_1000 || ""}</td>
-        <td>${item.price_box || ""}</td>
-        <td>${item.door || ""}</td>
+        <td>${formatNumber(item.price_omomi)}</td>
+        <td>${formatNumber(item.price_digital)}</td>
+        <td>${formatNumber(item.price_1000)}</td>
+        <td>${formatNumber(item.price_box)}</td>
+        <td>${formatNumber(item.door)}</td>
       `;
       tbody.appendChild(tr);
     });
