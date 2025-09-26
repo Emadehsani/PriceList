@@ -58,6 +58,7 @@
       <th>قیمت دیجیتال</th>
       <th>قیمت زیر 1000</th>
       <th>قیمت کارتنی</th>
+      <th>قیمت درب</th>
     </tr>
   </thead>
   <tbody id="product-list"></tbody>
@@ -128,6 +129,7 @@
         <td>${item.price_digital || ""}</td>
         <td>${item.price_1000 || ""}</td>
         <td>${item.price_box || ""}</td>
+        <td>${item.door || ""}</td>
       `;
       tbody.appendChild(tr);
     });
