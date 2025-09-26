@@ -35,6 +35,7 @@
       margin-bottom: 15px;
     }
     #reset-btn:hover { background: #c82333; }
+    img.product-img { width: 50px; height: auto; object-fit: contain; border-radius: 4px; }
   </style>
 </head>
 <body>
@@ -54,6 +55,7 @@
   <thead>
     <tr>
       <th>نام محصول</th>
+      <th>تصویر</th>
       <th>قیمت عمومی</th>
       <th>قیمت دیجیتال</th>
       <th>قیمت زیر 1000</th>
@@ -131,6 +133,7 @@
       let tr = document.createElement("tr");
       tr.innerHTML = `
         <td>${item.name || ""}</td>
+        <td>${item.pic ? `<img src="${item.pic}" alt="تصویر محصول" class="product-img">` : ""}</td>
         <td>${formatNumber(item.price_omomi)}</td>
         <td>${formatNumber(item.price_digital)}</td>
         <td>${formatNumber(item.price_1000)}</td>
